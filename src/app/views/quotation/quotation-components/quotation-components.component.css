@@ -1,0 +1,98 @@
+#content,
+#add {
+  display: flex;
+}
+
+#content,
+#add {
+  justify-content: center;
+}
+
+#content,
+#add {
+  align-items: center;
+}
+
+#content {
+  flex-direction: column;
+}
+
+#wrapper,
+#content {
+  width: 100%;
+  height: 100%;
+}
+
+#content {
+  padding: 32px;
+}
+
+#content > * {
+  margin: 12px 0 ;
+}
+
+h1 {
+  text-align: center;
+}
+
+#add {
+  border: 3px dashed white;
+  width: 64px;
+  height: 64px;
+  font-size: 48px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  background: none;
+}
+
+#add:hover {
+  background: white;
+  color: #222;
+  transition: 0.2s;
+}
+
+.component {
+  height: 36px;
+  margin: 24px 0;
+}
+
+#content .component > * {
+  width: 40%;
+  margin: auto 2.5%;
+  height: 24px;
+  line-height: 24px;
+}
+
+.component select {
+  background: none;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+.component select option {
+  background: #fafafa;
+  color: #222;
+}
+
+.component select option:hover {
+  box-shadow: inset 20px 20px #00f;
+}
+
+.component fa-icon {
+  width: 10%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.component fa-icon:hover {
+  color: red;
+  transition: 0.3s;
+}
+
+@media (max-width: 512px) {
+  #content {
+    padding: 0 8px;
+  }
+}

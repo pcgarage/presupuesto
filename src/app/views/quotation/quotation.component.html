@@ -1,0 +1,35 @@
+<div #wrapper id="wrapper">
+
+    <div id="content" [class.full-width]="currentStep == 0" [style.transition]="currentStep == 4 ? '.5s' : '0s'">
+
+        <div id="step-bar" [style.display]="(currentStep == 0) ? 'none' : 'flex'">
+            <span class="step" [class.complete]="currentStep > 1"></span>
+            <span class="bar" [class.complete]="currentStep > 1"></span>
+            <span class="step" [class.complete]="currentStep > 2"></span>
+            <span class="bar" [class.complete]="currentStep > 2"></span>
+            <span class="step" [class.complete]="currentStep > 3"></span>
+            <span class="bar" [class.complete]="currentStep > 3"></span>
+            <span class="step" [class.complete]="currentStep == 0"></span>
+        </div>
+
+        <div id="container">
+
+            <div id="router-outlet" [@routeAnimations]="prepareRoute(outlet)">
+                <router-outlet #outlet="outlet"></router-outlet>
+            </div>
+
+            <div id="step-number" [style.display]="(currentStep == 0) ? 'none' : 'block'">
+                <span id="current-step">{{ currentStep }}</span>
+                <span id="total-step">/4</span>
+            </div>
+
+            <div id="loading" *ngIf="loading">
+                <div id="loading-icon"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>

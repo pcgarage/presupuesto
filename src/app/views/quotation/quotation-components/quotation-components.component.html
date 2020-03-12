@@ -1,0 +1,36 @@
+<div id="wrapper">
+
+  <div id="content">
+
+    <h1>Alguna idea de componente?</h1>
+
+    <div style="overflow: hidden; overflow-y:auto; margin: 0">
+
+      <div class="component" *ngFor="let component of components; let i = index">
+
+        <mat-form-field>
+          <mat-label>Categoria</mat-label>
+          <mat-select [(ngModel)]="component.category" tabindex="0">
+            <mat-option *ngFor="let category of categories" [value]="category">
+              {{ category }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [(ngModel)]="component.description" tabindex="0">
+        </mat-form-field>
+        <fa-icon [icon]="faTrash" (click)="components.splice(i, 1)"></fa-icon>
+      </div>
+
+    </div>
+
+    <button id="add" (click)="add()" tabindex="0">
+      +
+    </button>
+
+    <button class="btn-continue pulse" (click)="submit()" tabindex="0">Continuar</button>
+
+  </div>
+
+</div>

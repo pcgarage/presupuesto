@@ -1,0 +1,31 @@
+<div style="font-family: Trebuchet ms,Arial,sans-serif">
+    <p>Hola {{ doc.contact_name }},</p>
+    <h1><b>Su solicitud ha sido confirmada!</b></h1>
+    <div style="display:flex;flex-direction: column;justify-content: flex-start;height:142px">
+        <span>Gracias por elegir en PC Garage! Tu solicitud ha sido confirmada con éxito.</span>
+        <span>Vamos evaluar su presupuesto y ayudarte a armar la mejor computadora para su uso!</span>
+        <span>Entraremos en contacto apenas esté listo.</span>
+    </div>
+    <p style="margin: 0 15px 0 0; font-weight: bold;">Los productos serán entregados de acuerdo con la fecha
+        seleccionada y/o cordinada previamente con la empresa.</p>
+
+    <hr style="width: 100%;">
+    <p>Nombre: <b>{{ doc.contact_name }}</b></p>
+    <p>Telefono: <b> {{ doc.contact_tel }}</b></p>
+    <p>E-mail: <b> {{ doc.contact_email }}</b></p>
+    <p>Presupuesto (₲): <b> {{ frappe.format(doc.budget, {'fieldtype': 'Currency'}) }}</b></p>
+    <p>Fecha prevista de entrega: <b> {{ doc.delivery_date }}</b></p>
+    <div style="display:flex;justify-content: left; align-items: left;flex-direction: column;width: 100%">
+        {%- for item in doc.items -%}
+        <hr style="width: 100%;">
+        <div style="display:flex;justify-content: center;align-items: center">
+            <div
+                style="width: 100%; display: flex; justify-content: left; align-items: flex-start;flex-direction: column; height:100%">
+                <p style="margin: 0 0 10px 15px">Categoria:<b>{{ item.category }}</b></p>
+                <p style="margin: 0 0 10px 15px"><b>{{ loop.index }} - {{ item.requested_item }}</b></p>
+            </div>
+        </div>
+        {%- endfor -%}
+    </div>
+    <hr style="border: 10px solid #ededed;"></span>
+</div>

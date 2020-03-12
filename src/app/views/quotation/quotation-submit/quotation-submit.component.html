@@ -1,0 +1,39 @@
+<div id="wrapper">
+
+    <div id="content">
+
+        <h1>Por último, pero no menos importante...</h1>
+
+        <h3 style="text-align: center">La entrega debe ser en algún día específico?</h3>
+
+        <h4>Seleccione su urgencia</h4>
+
+        <mat-button-toggle-group #buttonGroup="matButtonToggleGroup" (change)="resetDate(dateInput)">
+            <mat-button-toggle value="very-urgent" tabindex="0">
+                <div class="toggle-wrapper">
+                    <span>Muy Urgente</span>
+                    <span style="font-size:12px;line-height:18px">2-4 días</span>
+                </div>
+            </mat-button-toggle>
+            <mat-button-toggle value="urgent" tabindex="0">
+                <div class="toggle-wrapper">
+                    <span>Urgente</span>
+                    <span style="font-size:12px;line-height:18px">5-7 días</span>
+                </div>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <h4>O</h4>
+
+        <mat-form-field>
+            <mat-label>Elija una fecha</mat-label>
+            <input #dateInput matInput [matDatepicker]="picker" [matDatepickerFilter]="datepickerFilter" [(ngModel)]="date"
+                disabled>
+            <mat-datepicker-toggle matSuffix [for]="picker" tabindex="0"></mat-datepicker-toggle>
+            <mat-datepicker #picker touchUi [startAt]="startAt" disabled="false" (opened)="resetUrgency(buttonGroup)"></mat-datepicker>
+        </mat-form-field>
+        <button class="btn-continue pulse" (click)="submit()" tabindex="0">Continuar</button>
+
+    </div>
+
+</div>

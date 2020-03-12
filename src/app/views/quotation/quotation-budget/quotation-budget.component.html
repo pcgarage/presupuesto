@@ -1,0 +1,62 @@
+<div id="wrapper">
+
+    <div id="content">
+
+        <h1>Give money plz!</h1>
+
+        <h3 style="margin-bottom: 12px;text-align:center">Cuanto quieres invertir?</h3>
+
+        <div id="budget-info">
+
+            <div id="budget-amount">
+
+                <input #amt id="amount" name="amount" type="number" (change)="amountChange(amt.value)"
+                    (focusout)="inputFocusOut($event)" [value]="amount" tabindex="0">
+
+                <label for="amount"
+                    (click)="labelFocus($event)">{{ amount | currency:'PYG':'symbol-narrow':'1.0-0' }}</label>
+
+            </div>
+
+            <p>*Valor máximo de presupuesto</p>
+
+        </div>
+
+        <div id="budget-picker">
+
+            <div id="budget-slider">
+
+                <div #slider id="slider"></div>
+
+                <mat-form-field>
+
+                    <mat-label>Personalizar Icono</mat-label>
+
+                    <mat-select [(value)]="game" (selectionChange)="changeIcon()" tabindex="0">
+
+                        <mat-option value="League of Legends">
+                            League of Legends
+                        </mat-option>
+
+                        <mat-option value="Fortnite">
+                            Fortnite
+                        </mat-option>
+
+                        <mat-option value="APEX">
+                            APEX
+                        </mat-option>
+
+                    </mat-select>
+
+                </mat-form-field>
+                
+            </div>
+
+        </div>
+
+
+        <button class="btn-continue pulse" (click)="submit()" tabindex="0">Continuar</button>
+
+    </div>
+
+</div>

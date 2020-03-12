@@ -1,0 +1,44 @@
+<div id="wrapper">
+
+    <div id="content">
+
+        <h1>Queremos conocerte un poco más :)</h1>
+
+        <div class="custom-placeholder"
+            [ngClass]="checkName(name.value) ? 'valid-input' : name.value.length > 0 ? 'invalid-input' : 'default-input'">
+            <input #name name="name" id="name" type="name" (change)="checkName(name.value)" autocomplete="name" tabindex="0">
+            <label [class.active]="name.value" for="name">
+                <fa-icon [icon]="faUser"></fa-icon>
+                <span>Nombre Completo *</span>
+            </label>
+            <fa-icon [icon]="faTimes" [size]="'sm'" class="invalid-input-icon"></fa-icon>
+            <fa-icon [icon]="faCheck" [size]="'sm'" class="valid-input-icon"></fa-icon>
+        </div>
+
+        <div class="custom-placeholder"
+            [ngClass]="checkTel(tel.value) ? 'valid-input' : tel.value.length > 0 ? 'invalid-input' : 'default-input'">
+            <input #tel name="tel" id="tel" type="tel" (change)="checkTel(tel.value)" autocomplete="tel" tabindex="0">
+            <label [class.active]="tel.value" for="tel">
+                <fa-icon [icon]="faPhone"></fa-icon>
+                <span>Telefono *</span>
+            </label>
+            <fa-icon [icon]="faTimes" [size]="'sm'" class="invalid-input-icon"></fa-icon>
+            <fa-icon [icon]="faCheck" [size]="'sm'" class="valid-input-icon"></fa-icon>
+        </div>
+
+        <div class="custom-placeholder"
+            [ngClass]="checkEmail(email.value) ? 'valid-input' : email.value.length > 0 ? 'invalid-input' : 'default-input'">
+            <input #email name="email" id="email" type="email" (change)="checkEmail(email.value)" autocomplete="email" tabindex="0">
+            <label [class.active]="email.value" for="email">
+                <fa-icon [icon]="faEnvelope"></fa-icon>
+                <span>E-mail *</span>
+            </label>
+            <fa-icon [icon]="faTimes" [size]="'sm'" class="invalid-input-icon"></fa-icon>
+            <fa-icon [icon]="faCheck" [size]="'sm'" class="valid-input-icon"></fa-icon>
+        </div>
+
+        <button class="btn-continue pulse" (click)="submit()" tabindex="0">Continuar</button>
+
+    </div>
+
+</div>

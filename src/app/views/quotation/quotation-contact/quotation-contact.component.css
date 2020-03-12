@@ -1,0 +1,116 @@
+:host,
+#wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+#wrapper,
+#content,
+.custom-placeholder {
+  display: flex;
+}
+
+#wrapper,
+#content,
+.custom-placeholder {
+  align-items: center;
+}
+
+#wrapper,
+#content,
+.custom-placeholder {
+  justify-content: center;
+}
+
+#wrapper,
+#content,
+.custom-placeholder {
+  flex-wrap: wrap;
+}
+
+#content {
+    height: 100%;
+    padding: 0 32px;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.custom-placeholder {
+  position: relative;
+  margin: 36px 0;
+  width: 100%;
+}
+
+.custom-placeholder label,
+.custom-placeholder input {
+  display: flex;
+  font-size: 14px;
+  width: 100%;
+}
+
+.custom-placeholder label {
+  color: #aaa;
+  position: absolute;
+  top: -6px;
+  left: 0;
+  cursor: text;
+  transition: 0.075s ease-out;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.custom-placeholder input {
+  width: 100%;
+  background: none;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  transition: 0.4s;
+  padding-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.custom-placeholder.invalid-input input {
+  border-color: red;
+}
+
+.custom-placeholder.invalid-input .invalid-input-icon,
+.custom-placeholder.valid-input .valid-input-icon {
+  opacity: 1;
+}
+
+.custom-placeholder label.active,
+.custom-placeholder input:focus + label {
+  font-size: 14px;
+  top: -24px;
+  height: 14px;
+  line-height: 14px;
+  cursor: default;
+}
+
+.custom-placeholder > fa-icon {
+  position: absolute;
+  top: 0;
+  left: calc(100% - 18px);
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.custom-placeholder > label > fa-icon {
+    color: #fafafa;
+    margin-right: 6px;
+}
+
+.valid-input-icon {
+  color: #00ff00;
+}
+
+.invalid-input-icon {
+  color: red;
+}

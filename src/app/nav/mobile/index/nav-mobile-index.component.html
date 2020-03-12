@@ -1,0 +1,59 @@
+<nav [style.minHeight.px]="window.innerHeight + footer.offsetHeight">
+
+    <section id="top">
+        <span id="greetings">Hola {{ (user) ? user.first_name : 'visitante!' }}</span>
+        <span #close_button id="close-button" (click)="close()">
+            <fa-icon [icon]="faTimes" [size]="'2x'"></fa-icon>
+        </span>
+    </section>
+
+    <section id="user">
+
+        <a *ngIf="!user" routerLink="/login">
+            <fa-icon [icon]="faSignInAlt"></fa-icon>
+            <span>Entrar</span>
+        </a>
+
+        <a routerLink="/user/orders">
+            <fa-icon [icon]="faClipboard"></fa-icon>
+            <span>Pedidos</span>
+        </a>
+
+        <a routerLink="/cart">
+            <fa-icon [icon]="faShoppingCart"></fa-icon>
+            <span>Carrito</span>
+        </a>
+
+        <a routerLink="/user/config">
+            <fa-icon [icon]="faCog"></fa-icon>
+            <span>Configuración</span>
+        </a>
+
+        <a routerLink="/logout">
+            <fa-icon [icon]="faSignOutAlt"></fa-icon>
+            <span>Salir</span>
+        </a>
+
+    </section>
+
+    <section id="categories">
+
+        <div *ngFor="let category of categories">
+
+            <label for="{{ category.name }}" (click)="collapse(input.checked, content)">
+                <input #input type="checkbox" name="{{ category.name }}" id="{{ category.name }}">
+                <span>{{ category.name }}</span>
+            </label>
+
+            <div #content class="categories">
+
+                <a class="category-link" [routerLink]="child.link" *ngFor="let child of category.children">
+                    {{ child.name }}
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+</nav>

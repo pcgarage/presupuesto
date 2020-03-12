@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+commands="enable start stop restart"
+
+command=$1
+
+PORTS="3001 3002 3003 3004"
+
+if [[ $commands =~ (^|[[:space:]])$commands($|[[:space:]]) ]]; then
+
+    for port in ${PORTS}; do
+        systemctl $command webapp@${port}
+    done
+
+fi
+
+exit 0

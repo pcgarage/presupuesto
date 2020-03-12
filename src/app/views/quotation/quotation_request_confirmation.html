@@ -1,0 +1,22 @@
+<div style="font-family: Trebuchet ms,Arial,sans-serif;padding: 0 15px;">
+        <p>Estimado {{ name }},</p>
+        <p>Su solicitud de presupuesto ha sido creado con éxito!</p>
+
+        <p>Haga clic en el enlace de abajo para confirmar su solicitud.</p>
+
+        <p style="margin: 30px 0px;">
+                <a href="{{ link }}" rel="nofollow"
+                        style="padding: 8px 20px; background-color: #222222; color: #fff; border-radius: 4px; text-decoration: none; line-height: 1; border-bottom: 3px solid rgba(0, 0, 0, 0.2); font-size: 14px; font-weight: 600">Confirmar
+                        solicitud</a>
+        </p>
+
+        <h5>Código de confirmación: {{ code }}</h5>
+
+        <br>
+        <p>Gracias,<br>
+                Equipo PC Garage</p>
+        <br>
+        <p style="font-size: 85%;">También podés copiar y pegar este enlace en tu navegador: <a
+                        href="{{ link }}">{{ link }}</a>
+        </p>
+</div>

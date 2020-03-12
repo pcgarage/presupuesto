@@ -1,0 +1,43 @@
+    <div id="top-message">
+        <span>
+            PRECIOS APLICADOS PARA COMPRAS EN EFECTIVO, GIROS TIGO O TRANSFERENCIA BANCARIA.
+        </span>
+    </div>
+
+    <div id="header-wrapper">
+
+        <div id="header-content">
+
+            <section id="nav-mobile-toggle-wrapper" class="header-section">
+                <button id="nav-mobile-toggle-button" (click)="showNavMobile()">
+                    <fa-icon [icon]="faBars" [size]="'2x'"></fa-icon>
+                </button>
+            </section>
+
+            <section id="logo-wrapper" class="header-section">
+                <img src="/assets/img/mini-logo.png">
+            </section>
+
+            <section id="search-wrapper" class="header-section">
+                <input type="text" class="search-input" placeholder="Qué buscas?">
+            </section>
+
+            <section id="user-wrapper" class="header-section">
+                <a class="icon-link">
+                    <fa-icon [icon]="faUser" [size]="'2x'"></fa-icon>
+                    <span>Hola, {{ user.first_name }}</span>
+                </a>
+            </section>
+
+            <section id="cart-wrapper" class="header-section">
+                <a class="icon-link">
+                    <fa-icon [icon]="faShoppingCart" [size]="'2x'"></fa-icon>
+                    <span> {{ cart.qty }}</span>
+                </a>
+            </section>
+
+        </div>
+
+    </div>
+
+<nav-mobile-index [style.left]="(show_nav_mobile) ? '0' : '-100%'" (closeEvent)="hideNavMobile()"></nav-mobile-index>
